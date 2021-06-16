@@ -2,6 +2,7 @@ import logo from './assets/images/logo.svg';
 import './assets/css/App.css';
 import MyFirstComponent from './components/MyFirstComponent';
 import Movies from './components/Movies';
+import Header from './components/Header';
 
 function App() {
 
@@ -13,6 +14,8 @@ function App() {
 
   return (
     <div className="App">
+
+      <Header></Header>
 
       <header className="App-header">
 
