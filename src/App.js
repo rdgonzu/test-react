@@ -3,6 +3,7 @@ import './assets/css/App.css';
 import MyFirstComponent from './components/MyFirstComponent';
 import Movies from './components/Movies';
 import Header from './components/Header';
+import Slider from './components/Slider';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
     <div className="App">
 
       <Header></Header>
+      <Slider></Slider>
 
       <header className="App-header">
 
