@@ -1,5 +1,6 @@
 import logo from './assets/images/logo.svg';
 import './assets/css/App.css';
+import MyFirstComponent from './components/MyFirstComponent';
 
 function App() {
 
@@ -11,10 +12,18 @@ function App() {
 
   return (
     <div className="App">
+
       <header className="App-header">
+
         <img src={logo} className="App-logo" alt="logo" />
-        {presentation('René González')}
+        {presentation('René González')}  
+
+        <section className="components">
+          <MyFirstComponent></MyFirstComponent>
+        </section>
+
       </header>
+
     </div>
   );
 }
