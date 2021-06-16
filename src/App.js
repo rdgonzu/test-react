@@ -1,6 +1,7 @@
 import logo from './assets/images/logo.svg';
 import './assets/css/App.css';
 import MyFirstComponent from './components/MyFirstComponent';
+import Movies from './components/Movies';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
 
         <section className="components">
           <MyFirstComponent></MyFirstComponent>
+          <Movies></Movies>
         </section>
 
       </header>
