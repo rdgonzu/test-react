@@ -11,7 +11,7 @@ function App() {
     <div className="App">
 
       <Header></Header>
-      <Slider></Slider>
+      <Slider title="This is a React example"></Slider>
 
       <div className="center">
 
