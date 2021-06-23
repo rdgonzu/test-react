@@ -4,6 +4,7 @@ import MyFirstComponent from './components/MyFirstComponent';
 import Movies from './components/Movies';
 import Header from './components/Header';
 import Slider from './components/Slider';
+import Sidebar from './components/Sidebar';
 
 function App() {
 
@@ -19,17 +20,23 @@ function App() {
       <Header></Header>
       <Slider></Slider>
 
-      <header className="App-header">
+      <div className="center">
 
-        <img src={logo} className="App-logo" alt="logo" />
-        {presentation('René González')}  
+        <section id="content">
 
-        <section className="components">
-          <MyFirstComponent></MyFirstComponent>
-          <Movies></Movies>
+          <img src={logo} className="App-logo" alt="logo" />
+          {presentation('René González')}  
+
+          <section className="components">
+            <MyFirstComponent></MyFirstComponent>
+            <Movies></Movies>
+          </section>
+
         </section>
 
-      </header>
+        <Sidebar></Sidebar>
+
+      </div>
 
     </div>
   );
