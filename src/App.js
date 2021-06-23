@@ -1,19 +1,11 @@
-import logo from './assets/images/logo.svg';
 import './assets/css/App.css';
-import MyFirstComponent from './components/MyFirstComponent';
-import Movies from './components/Movies';
 import Header from './components/Header';
 import Slider from './components/Slider';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
+import TestsComponent from './components/TestsComponent';
 
 function App() {
-
-  function presentation (name) {
-    return (
-      <h2>Hello. I'm {name}.</h2>
-    );
-  }
 
   return (
     <div className="App">
@@ -25,12 +17,8 @@ function App() {
 
         <section id="content">
 
-          <img src={logo} className="App-logo" alt="logo" />
-          {presentation('René González')}  
-
           <section className="components">
-            <MyFirstComponent></MyFirstComponent>
-            <Movies></Movies>
+            <TestsComponent></TestsComponent>
           </section>
 
         </section>
