@@ -5,6 +5,7 @@ import Movies from './components/Movies';
 import Header from './components/Header';
 import Slider from './components/Slider';
 import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -36,7 +37,11 @@ function App() {
 
         <Sidebar></Sidebar>
 
+        <div className="clearfix"></div>
+
       </div>
+
+      <Footer></Footer>
 
     </div>
   );
