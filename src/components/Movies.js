@@ -3,16 +3,7 @@ import Movie from "./Movie";
 
 class Movies extends Component {
 
-    state = {
-        movies: [
-            {title: 'Movie 1', image: 'https://via.placeholder.com/150x150'},
-            {title: 'Movie 2', image: 'https://via.placeholder.com/150x150'},
-            {title: 'Movie 3', image: 'https://via.placeholder.com/150x150'},
-            {title: 'Movie 4', image: 'https://via.placeholder.com/150x150'},
-            {title: 'Movie 5', image: 'https://via.placeholder.com/150x150'}
-        ],
-        favorite: {}
-    }
+    state = {}
 
     changeTitle = () => {
 
@@ -29,6 +20,27 @@ class Movies extends Component {
         this.setState({
             favorite: movie
         });
+    }
+
+    componentWillMount () {
+
+        console.log('Component is going to be mounted.');
+
+        this.setState({
+            movies: [
+                {title: 'Movie 1', image: 'https://via.placeholder.com/150x150'},
+                {title: 'Movie 2', image: 'https://via.placeholder.com/150x150'},
+                {title: 'Movie 3', image: 'https://via.placeholder.com/150x150'},
+                {title: 'Movie 4', image: 'https://via.placeholder.com/150x150'},
+                {title: 'Movie 5', image: 'https://via.placeholder.com/150x150'}
+            ],
+            favorite: {}
+        });
+
+    }
+
+    componentDidMount () {
+        console.log('Component has been mounted.');
     }
 
     render () {
