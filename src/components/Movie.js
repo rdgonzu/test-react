@@ -2,9 +2,14 @@ import React, {Component} from "react";
 
 class Movie extends Component {
 
+    setAsFavorite = (movie) => {
+        this.props.setAsFavorite(this.props.movie);
+    }
+
     render () {
 
         const {title, image} = this.props.movie;
+        const movie = this.props.movie;
 
         return (
             <article className="article-item" id="article-template">
@@ -20,6 +25,10 @@ class Movie extends Component {
                 </span>
 
                 <a href="#">View more</a>
+
+                <br />
+
+                <button onClick={this.setAsFavorite}>Set as favorite</button>
 
                 <div className="clearfix"></div>
                 

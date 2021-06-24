@@ -10,7 +10,8 @@ class Movies extends Component {
             {title: 'Movie 3', image: 'https://via.placeholder.com/150x150'},
             {title: 'Movie 4', image: 'https://via.placeholder.com/150x150'},
             {title: 'Movie 5', image: 'https://via.placeholder.com/150x150'}
-        ]
+        ],
+        favorite: {}
     }
 
     changeTitle = () => {
@@ -24,21 +25,34 @@ class Movies extends Component {
 
     }
 
+    setAsFavorite = (movie) => {
+        this.setState({
+            favorite: movie
+        });
+    }
+
     render () {
         return (
             <React.Fragment>
             
-                <h2 class="subheader">Movie list</h2>
+                <h2 className="subheader">Movie list</h2>
 
                 <p>
                     <button onClick={this.changeTitle}>Change title</button>
                 </p>
+
+                {this.state.favorite.title &&
+                    <p>
+                        <strong>Favorite movie is: </strong>
+                        <span>{this.state.favorite.title}</span>
+                    </p>
+                }
                 
                 <div id="articles">
                     {
                         this.state.movies.map((movie, i) => {
                             return (
-                                <Movie key={i} movie={movie}></Movie>
+                                <Movie key={i} movie={movie} setAsFavorite={this.setAsFavorite}></Movie>
                             )
                         })
                     }

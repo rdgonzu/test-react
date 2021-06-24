@@ -5,9 +5,9 @@ class Slider extends Component {
     render () {
 
         return (
-            <div id="slider" class="slider-big">
+            <div id="slider" className="slider-big">
                 <h1>{this.props.title}</h1>
-                <a href="#" class="btn-white">Blog</a>
+                <a href="#" className="btn-white">Blog</a>
             </div>
         );
 
