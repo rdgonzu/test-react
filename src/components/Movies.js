@@ -53,11 +53,14 @@ class Movies extends Component {
                     <button onClick={this.changeTitle}>Change title</button>
                 </p>
 
-                {this.state.favorite.title &&
-                    <p>
-                        <strong>Favorite movie is: </strong>
-                        <span>{this.state.favorite.title}</span>
-                    </p>
+                {this.state.favorite.title ? (
+                        <p>
+                            <strong>Favorite movie is: </strong>
+                            <span>{this.state.favorite.title}</span>
+                        </p>
+                    ) : (
+                        <p>Favorite movie not found.</p>
+                    )
                 }
                 
                 <div id="articles">
