@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Slider from './components/Slider';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
-import TestsComponent from './components/TestsComponent';
+import Movies from './components/Movies';
 
 function App() {
 
@@ -18,7 +18,7 @@ function App() {
         <section id="content">
 
           <section className="components">
-            <TestsComponent></TestsComponent>
+            <Movies></Movies>
           </section>
 
         </section>
