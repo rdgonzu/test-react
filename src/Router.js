@@ -17,6 +17,17 @@ class Router extends Component {
                     
                     <Route exact path="/tests-component" component={TestsComponent}></Route>
 
+                    <Route exact path="/test-with/params/:name/:lastName?" render={(props) => {
+
+                        const name = props.match.params.name;
+                        const lastName = props.match.params.lastName;
+
+                        return (
+                            <h2>{name} {lastName}</h2>
+                        );
+
+                    }} />
+
                     <Route component={Error}></Route>
 
                 </Switch>
