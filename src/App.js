@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Slider from './components/Slider';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
-import Movies from './components/Movies';
+import Router from './Router';
 
 function App() {
 
@@ -18,7 +18,7 @@ function App() {
         <section id="content">
 
           <section className="components">
-            <Movies></Movies>
+            <Router></Router>
           </section>
 
         </section>
