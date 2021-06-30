@@ -26,6 +26,7 @@ class Router extends Component {
                             <Switch>
 
                                 <Route exact path="/" component={Movies}></Route>
+                                <Route exact path="/home" component={Movies}></Route>
 
                                 <Route exact path="/my-first-component" component={MyFirstComponent}></Route>
                                 
