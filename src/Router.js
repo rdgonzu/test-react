@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from "./components/Home";
 import Blog from "./components/Blog";
+import Form from "./components/Form";
 
 class Router extends Component {
     render () {
@@ -20,6 +21,7 @@ class Router extends Component {
                     <Route exact path="/" component={Home}></Route>
                     <Route exact path="/home" component={Home}></Route>
                     <Route exact path="/blog" component={Blog}></Route>
+                    <Route exact path="/form" component={Form}></Route>
 
                     <Route exact path="/my-first-component" component={MyFirstComponent}></Route>
                     
