@@ -2,12 +2,10 @@ import React, {Component} from "react";
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import TestsComponent from './components/TestsComponent';
 import MyFirstComponent from './components/MyFirstComponent';
-import Movies from './components/Movies';
 import Error from "./components/Error";
 import Header from './components/Header';
-import Slider from './components/Slider';
-import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
+import Home from "./components/Home";
 
 class Router extends Component {
     render () {
@@ -15,47 +13,30 @@ class Router extends Component {
             <BrowserRouter>
 
                 <Header></Header>
-                <Slider title="This is a React example"></Slider>
 
-                <div className="center">
+                <Switch>
 
-                    <section id="content">
+                    <Route exact path="/" component={Home}></Route>
+                    <Route exact path="/home" component={Home}></Route>
 
-                        <section className="components">
+                    <Route exact path="/my-first-component" component={MyFirstComponent}></Route>
+                    
+                    <Route exact path="/tests-component" component={TestsComponent}></Route>
 
-                            <Switch>
+                    <Route exact path="/test-with/params/:name/:lastName?" render={(props) => {
 
-                                <Route exact path="/" component={Movies}></Route>
-                                <Route exact path="/home" component={Movies}></Route>
+                        const name = props.match.params.name;
+                        const lastName = props.match.params.lastName;
 
-                                <Route exact path="/my-first-component" component={MyFirstComponent}></Route>
-                                
-                                <Route exact path="/tests-component" component={TestsComponent}></Route>
+                        return (
+                            <h2>{name} {lastName}</h2>
+                        );
 
-                                <Route exact path="/test-with/params/:name/:lastName?" render={(props) => {
+                    }} />
 
-                                    const name = props.match.params.name;
-                                    const lastName = props.match.params.lastName;
+                    <Route component={Error}></Route>
 
-                                    return (
-                                        <h2>{name} {lastName}</h2>
-                                    );
-
-                                }} />
-
-                                <Route component={Error}></Route>
-
-                            </Switch>
-
-                        </section>
-
-                    </section>
-
-                    <Sidebar></Sidebar>
-
-                    <div className="clearfix"></div>
-
-                </div>
+                </Switch>
 
                 <Footer></Footer>
 
