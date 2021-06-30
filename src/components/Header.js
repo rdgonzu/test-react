@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import logo from '../assets/images/logo.svg';
+import {NavLink} from 'react-router-dom';
 
 class Header extends Component {
 
@@ -21,16 +22,16 @@ class Header extends Component {
                     <nav id="menu">
                         <ul>
                             <li>
-                                <a href="#">Home</a>
+                                <NavLink to="/">Home</NavLink>
                             </li>
                             <li>
-                                <a href="#">Blog</a>
+                                <NavLink to="/">Blog</NavLink>
                             </li>
                             <li>
-                                <a href="#">Form</a>
+                                <NavLink to="/">Form</NavLink>
                             </li>
                             <li>
-                                <a href="#">Page</a>
+                                <NavLink to="/my-first-component">Page</NavLink>
                             </li>
                         </ul>
                     </nav>
