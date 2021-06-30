@@ -25,7 +25,7 @@ class Header extends Component {
                                 <NavLink to="/home" activeClassName="active">Home</NavLink>
                             </li>
                             <li>
-                                <NavLink to="tests-component" activeClassName="active">Blog</NavLink>
+                                <NavLink to="Blog" activeClassName="active">Blog</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/test-with/params/René/González" activeClassName="active">Form</NavLink>
