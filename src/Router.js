@@ -21,6 +21,17 @@ class Router extends Component {
                     <Route exact path="/" component={Home}></Route>
                     <Route exact path="/home" component={Home}></Route>
                     <Route exact path="/blog" component={Blog}></Route>
+
+                    <Route exact path="/blog/article/:id" render={(props) => {
+
+                        const id = props.match.params.id;
+
+                        return (
+                            <h2>Article ID: {id}</h2>
+                        );
+
+                    }} />
+
                     <Route exact path="/form" component={Form}></Route>
 
                     <Route exact path="/my-first-component" component={MyFirstComponent}></Route>

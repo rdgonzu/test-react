@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import axios from 'axios';
 import Moment from 'react-moment';
 import 'moment/locale/es';
+import {Link} from 'react-router-dom';
 import Global from "../Global";
 
 class Articles extends Component {
@@ -50,7 +51,7 @@ class Articles extends Component {
                             <Moment fromNow>{article.date}</Moment>
                         </span>
 
-                        <a href="#">Leer más</a>
+                        <Link to={'/blog/article/' + article._id}>Leer más</Link>
 
                         <div className="clearfix"></div>
 
