@@ -15,10 +15,28 @@ class Articles extends Component {
     }
 
     componentWillMount () {
+
+        const fromHome = this.props.fromHome;
+
+        if (fromHome) {
+            this.getRecentArticles();
+            return;
+        }
+
         this.getArticles();
+
     }
 
     getArticles = () => {
+        axios.get(this.apiUrl + 'articles')
+        .then((res) => {
+            this.setState({
+                articles: res.data.articles
+            });
+        });
+    }
+
+    getRecentArticles = () => {
         axios.get(this.apiUrl + 'articles/4')
         .then((res) => {
             this.setState({
