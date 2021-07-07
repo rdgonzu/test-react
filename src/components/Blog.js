@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Slider from "./Slider";
 import Sidebar from './Sidebar';
+import Articles from "./Articles";
 
 class Blog extends Component {
 
@@ -15,6 +16,7 @@ class Blog extends Component {
 
                     <section id="content">
                         <h1 className="subheader">Articles</h1>
+                        <Articles></Articles>
                     </section>
 
                     <Sidebar blog="true"></Sidebar>
