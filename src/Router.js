@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import TestsComponent from './components/TestsComponent';
 import MyFirstComponent from './components/MyFirstComponent';
 import Error from "./components/Error";
@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Home from "./components/Home";
 import Blog from "./components/Blog";
 import Form from "./components/Form";
+import Search from "./components/Search";
 
 class Router extends Component {
     render () {
@@ -30,6 +31,15 @@ class Router extends Component {
                             <h2>Article ID: {id}</h2>
                         );
 
+                    }} />
+                    
+                    <Route exact path="/blog/search/:searchStr" component={Search}></Route>
+
+                    <Route exact path="/blog/redirect/:searchStr" render={(props) => {
+                        const searchStr = props.match.params.searchStr;
+                        return (
+                            <Redirect to={'/blog/search/' + searchStr} />
+                        )
                     }} />
 
                     <Route exact path="/form" component={Form}></Route>

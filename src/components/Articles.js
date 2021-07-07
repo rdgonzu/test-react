@@ -17,13 +17,17 @@ class Articles extends Component {
     componentWillMount () {
 
         const fromHome = this.props.fromHome;
+        const searchStr = this.props.searchStr;
 
         if (fromHome) {
             this.getRecentArticles();
-            return;
         }
-
-        this.getArticles();
+        else if (searchStr) {
+            this.searchArticles(searchStr);
+        }
+        else {
+            this.getArticles();
+        }
 
     }
 
@@ -38,6 +42,15 @@ class Articles extends Component {
 
     getRecentArticles = () => {
         axios.get(this.apiUrl + 'articles/4')
+        .then((res) => {
+            this.setState({
+                articles: res.data.articles
+            });
+        });
+    }
+
+    searchArticles = (searchStr) => {
+        axios.get(this.apiUrl + 'search/' + searchStr)
         .then((res) => {
             this.setState({
                 articles: res.data.articles
