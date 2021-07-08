@@ -10,6 +10,7 @@ import Blog from "./components/Blog";
 import Form from "./components/Form";
 import Search from "./components/Search";
 import Article from "./components/Article";
+import CreateArticle from "./components/CreateArticle";
 
 class Router extends Component {
     render () {
@@ -25,6 +26,7 @@ class Router extends Component {
                     <Route exact path="/blog" component={Blog}></Route>
 
                     <Route exact path="/blog/article/:id" component={Article}></Route>
+                    <Route exact path="/blog/create" component={CreateArticle}></Route>
                     
                     <Route exact path="/blog/search/:searchStr" component={Search}></Route>
 

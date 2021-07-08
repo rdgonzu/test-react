@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 
 class Sidebar extends Component {
 
@@ -35,7 +35,7 @@ class Sidebar extends Component {
                 {this.props.blog === "true" &&
                     <div id="nav-blog" className="sidebar-item">
                         <h3>What you can do</h3>
-                        <a href="#" className="btn btn-success">Create article</a>
+                        <Link to={'/blog/create'} className="btn btn-success">Create article</Link>
                     </div>
                 }
 
