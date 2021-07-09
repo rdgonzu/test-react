@@ -13,7 +13,8 @@ class CreateArticle extends Component {
 
     state = {
         article: {},
-        status: null
+        status: null,
+        selectedFile: null
     };
 
     saveArticle = (e) => {
@@ -30,11 +31,51 @@ class CreateArticle extends Component {
         .then((res) => {
 
             if (res.data.articleStored) {
+
                 this.setState({
                     article: res.data.articleStored,
-                    status: 'success'
+                    status: 'waiting'
                 });
+
+                if (this.state.selectedFile !== null) {
+
+                    const articleId = this.state.article._id;
+
+                    const formData = new FormData();
+
+                    formData.append(
+                        'file0',
+                        this.state.selectedFile,
+                        this.state.selectedFile.name
+                    );
+
+                    axios.post(this.apiUrl + 'upload-image/' + articleId, formData)
+                    .then((res) => {
+
+                        if (res.data.articleUpdated) {
+                            this.setState({
+                                article: res.data.articleUpdated,
+                                status: 'success'
+                            });
+                        }
+                        else {
+                            this.setState({
+                                status: 'failed'
+                            });
+                        }
+
+                    });
+
+                }
+
+                else {
+                    this.setState({
+                        status: 'success'
+                    });
+                }
+
             }
+
             else {
                 this.setState({
                     status: 'failed'
@@ -43,6 +84,13 @@ class CreateArticle extends Component {
 
         });
 
+    }
+
+    changeFile = (event) => {
+        this.setState({
+            selectedFile: event.target.files[0]
+        });
+        console.log(this.state);
     }
 
     changeState = () => {
@@ -82,7 +130,7 @@ class CreateArticle extends Component {
                         <div className="form-group">
                             <label htmlFor="file0">Image</label>
                             <div className="clearfix"></div>
-                            <input type="file" name="file0"></input>
+                            <input type="file" name="file0" onChange={this.changeFile}></input>
                         </div>
 
                         <div className="clearfix"></div>
