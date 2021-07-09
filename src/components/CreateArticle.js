@@ -144,6 +144,7 @@ class CreateArticle extends Component {
                         <div className="form-group">
                             <label htmlFor="content">Content</label>
                             <textarea name="content" ref={this.contentRef}></textarea>
+                            {this.validator.message('content', this.state.article.title, 'required')}
                         </div>
 
                         <div className="form-group">
