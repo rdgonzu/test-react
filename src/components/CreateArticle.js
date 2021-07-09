@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Redirect} from 'react-router-dom';
 import Global from "../Global";
 import Sidebar from './Sidebar';
+import SimpleReactValidator from "simple-react-validator";
 
 class CreateArticle extends Component {
 
@@ -17,10 +18,27 @@ class CreateArticle extends Component {
         selectedFile: null
     };
 
+    componentWillMount () {
+        this.validator = new SimpleReactValidator();
+    }
+
     saveArticle = (e) => {
 
         e.preventDefault();
         this.changeState();
+
+        if (!this.validator.allValid()) {
+
+            this.validator.showMessages();
+            this.forceUpdate();
+
+            this.setState({
+                status: 'failed'
+            });
+
+            return;
+
+        }
 
         const article = {
             title: this.titleRef.current.value,
@@ -120,6 +138,7 @@ class CreateArticle extends Component {
                         <div className="form-group">
                             <label htmlFor="title">Title</label>
                             <input type="text" name="title" ref={this.titleRef} />
+                            {this.validator.message('title', this.state.article.title, 'required|alpha_num_space')}
                         </div>
 
                         <div className="form-group">
