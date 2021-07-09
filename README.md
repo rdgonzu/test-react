@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Testing React
+
+This is a simple React's example of use, created following [this Udemy Course](https://www.udemy.com/course/master-en-frameworks-javascript-aprende-angular-react-vue-js/).
+
+As a backend, [this code](https://github.com/rdgonzu/node-rest-api) is needed.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
